@@ -1,0 +1,28 @@
+{
+  "name": "discord-bot",
+  "version": "0.1.0",
+  "description": "A Discord bot for CodeBottle's Discord server",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codebottle-io/discord-bot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "codebottle"
+  ],
+  "author": "codebottle-io",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codebottle-io/discord-bot/issues"
+  },
+  "homepage": "https://github.com/codebottle-io/discord-bot#readme",
+  "dependencies": {
+    "codebottle": "^1.1.0",
+    "discord.js": "^11.0.0"
+  }
+}
