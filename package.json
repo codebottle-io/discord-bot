@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/codebottle-io/discord-bot#readme",
   "dependencies": {
-    "codebottle": "^1.1.0",
-    "discord.js": "^11.0.0"
+    "codebottle": "^0.2.3",
+    "discord.js": "^11.0.0",
+    "dotenv": "^5.0.1"
   }
 }
