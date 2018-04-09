@@ -46,6 +46,16 @@ bot.on('message', msg => {
 				}).catch(e => {
 					msg.react('⛔');
 				});
+			case 'help':
+				const embed = new Discord.RichEmbed();
+				embed.setTitle('CodeBottle');
+				embed.setColor('#272727');
+				embed.setDescription(`
+This is a bot for https://codebottle.io/
+
+\`!search <keywords>\` Search snippets with keywords
+\`!get <id>\` Get a snippet by its ID`);
+				msg.channel.send(embed);
 		}
 	}
 })
