@@ -46,6 +46,7 @@ bot.on('message', msg => {
 				}).catch(e => {
 					msg.react('⛔');
 				});
+				break;
 			case 'help':
 				const embed = new Discord.RichEmbed();
 				embed.setTitle('CodeBottle');
@@ -56,6 +57,7 @@ This is a bot for https://codebottle.io/
 \`!search <keywords>\` Search snippets with keywords
 \`!get <id>\` Get a snippet by its ID`);
 				msg.channel.send(embed);
+				break;
 		}
 	}
 })
