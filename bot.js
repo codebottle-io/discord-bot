@@ -22,10 +22,12 @@ bot.on('message', msg => {
 			case 'search':
 				console.log(`=> Search: ${rest}`);
 				codebottle.search(rest).then(response => {
+					const description = response.data[0].description ? response.data[0].description
+						: '*No description provided*';
 					const embed = new Discord.RichEmbed();
 					embed.setTitle(response.data[0].title);
 					embed.setColor('#272727');
-					embed.setDescription(response.data[0].description);
+					embed.setDescription(description);
 					embed.setURL(`https://codebottle.io/s/${response.data[0].id}`);
 					embed.setAuthor(response.data[0].username);
 					msg.channel.send(embed);
@@ -36,10 +38,12 @@ bot.on('message', msg => {
 			case 'get':
 				console.log(`=> Get: ${rest}`);
 				codebottle.get(rest).then(response => {
+					const description = response.data.description ? response.data.description
+						: '*No description provided*';
 					const embed = new Discord.RichEmbed();
 					embed.setTitle(response.data.title);
 					embed.setColor('#272727');
-					embed.setDescription(response.data.description);
+					embed.setDescription(description);
 					embed.setURL(`https://codebottle.io/s/${response.data.id}`);
 					embed.setAuthor(response.data.username);
 					msg.channel.send(embed);
