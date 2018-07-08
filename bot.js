@@ -23,7 +23,7 @@ bot.on('message', msg => {
 				console.log(`=> Search: ${rest}`);
 				codebottle.search(rest).then(response => {
 					const description = response.data[0].description ? response.data[0].description
-						: '*No description provided*';
+						: '*No description provided.*';
 					const embed = new Discord.RichEmbed();
 					embed.setTitle(response.data[0].title);
 					embed.setColor('#272727');
@@ -39,7 +39,7 @@ bot.on('message', msg => {
 				console.log(`=> Get: ${rest}`);
 				codebottle.get(rest).then(response => {
 					const description = response.data.description ? response.data.description
-						: '*No description provided*';
+						: '*No description provided.*';
 					const embed = new Discord.RichEmbed();
 					embed.setTitle(response.data.title);
 					embed.setColor('#272727');
