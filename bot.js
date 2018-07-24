@@ -23,11 +23,11 @@ bot.on('message', msg => {
 				console.log(`=> Search: ${rest}`);
 				codebottle.search(rest).then(response => {
 					const embed = new Discord.RichEmbed();
-					embed.setTitle(response.data[0].title);
+					embed.setTitle(response[0].title);
 					embed.setColor('#272727');
-					embed.setDescription(response.data[0].description);
-					embed.setURL(`https://codebottle.io/s/${response.data[0].id}`);
-					embed.setAuthor(response.data[0].username);
+					embed.setDescription(response[0].description);
+					embed.setURL(`https://codebottle.io/s/${response[0].id}`);
+					embed.setAuthor(respon[0].username);
 					msg.channel.send(embed);
 				}).catch(e => {
 					msg.react('⛔');
@@ -37,11 +37,11 @@ bot.on('message', msg => {
 				console.log(`=> Get: ${rest}`);
 				codebottle.get(rest).then(response => {
 					const embed = new Discord.RichEmbed();
-					embed.setTitle(response.data.title);
+					embed.setTitle(response.title);
 					embed.setColor('#272727');
-					embed.setDescription(response.data.description);
-					embed.setURL(`https://codebottle.io/s/${response.data.id}`);
-					embed.setAuthor(response.data.username);
+					embed.setDescription(response.description);
+					embed.setURL(`https://codebottle.io/s/${response.id}`);
+					embed.setAuthor(response.username);
 					msg.channel.send(embed);
 				}).catch(e => {
 					msg.react('⛔');
