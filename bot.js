@@ -22,6 +22,8 @@ bot.on('message', msg => {
 			case 'search':
 				console.log(`=> Search: ${rest}`);
 				codebottle.search(rest).then(response => {
+					const description = response.data[0].description ? response.data[0].description
+						: '*No description provided.*';
 					const embed = new Discord.RichEmbed();
 					embed.setTitle(response[0].title);
 					embed.setColor('#272727');
@@ -36,6 +38,8 @@ bot.on('message', msg => {
 			case 'get':
 				console.log(`=> Get: ${rest}`);
 				codebottle.get(rest).then(response => {
+					const description = response.data.description ? response.data.description
+						: '*No description provided.*';
 					const embed = new Discord.RichEmbed();
 					embed.setTitle(response.title);
 					embed.setColor('#272727');
@@ -46,6 +50,7 @@ bot.on('message', msg => {
 				}).catch(e => {
 					msg.react('⛔');
 				});
+				break;
 			case 'help':
 				const embed = new Discord.RichEmbed();
 				embed.setTitle('CodeBottle');
@@ -56,6 +61,7 @@ This is a bot for https://codebottle.io/
 \`!search <keywords>\` Search snippets with keywords
 \`!get <id>\` Get a snippet by its ID`);
 				msg.channel.send(embed);
+				break;
 		}
 	}
 })
