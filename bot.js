@@ -29,7 +29,7 @@ bot.on('message', msg => {
 					embed.setColor('#272727');
 					embed.setDescription(response[0].description);
 					embed.setURL(`https://codebottle.io/s/${response[0].id}`);
-					embed.setAuthor(respon[0].username);
+					embed.setAuthor(response[0].username);
 					msg.channel.send(embed);
 				}).catch(e => {
 					msg.react('⛔');
